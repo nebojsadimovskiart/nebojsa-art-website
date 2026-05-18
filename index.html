@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebojša Dimovski — Painter</title>
+    <meta name="description" content="Contemporary paintings by Nebojša Dimovski. Jazz & urban scenes, intimate interiors, sevdah. Oil and acrylic on canvas.">
+    <meta name="keywords" content="Nebojša Dimovski, painter, artist, contemporary art, jazz paintings, sevdah, oil painting, Bosnia, Sarajevo">
+    <meta name="author" content="Nebojša Dimovski">
+    <meta property="og:title" content="Nebojša Dimovski — Painter">
+    <meta property="og:description" content="Contemporary paintings by Nebojša Dimovski. Jazz & urban scenes, intimate interiors, sevdah.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nebojšadimovski.com">
+    <meta property="og:image" content="https://nebojšadimovski.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="favicon-256.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #f5f0e8;
+            --text-secondary: #a8a29e;
+            --text-muted: #6b6560;
+            --accent: #c4a882;
+            --border: #2a2a2a;
+            --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.6s var(--transition);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: color 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.4s var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url('images/jazz4.jpg') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 70%, var(--bg-primary) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .subtitle {
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 2rem auto;
+        }
+
+        /* ===== SERIES GRID ===== */
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .series-card {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: all 0.6s var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .series-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .series-card-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: all 0.8s var(--transition);
+            display: block;
+        }
+
+        .series-card:hover .series-card-image {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .series-card-content {
+            padding: 2rem;
+        }
+
+        .series-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+        }
+
+        .series-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .series-card-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ===== GALLERY PAGE ===== */
+        .gallery-page {
+            display: none;
+            padding: 6rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .gallery-page.active {
+            display: block;
+        }
+
+        .gallery-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .gallery-back:hover {
+            color: var(--text-primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: all 0.5s var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--accent);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.8s var(--transition);
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-info h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-item-info .meta {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.96);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-info {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .lightbox-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .lightbox-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
+
+        /* ===== ABOUT ===== */
+        #about {
+            display: block;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            filter: grayscale(30%);
+            display: block;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--accent);
+            z-index: -1;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            text-align: center;
+            padding: 10rem 4rem;
+        }
+
+        .contact-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s var(--transition);
+        }
+
+        .contact-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            section {
+                padding: 5rem 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .lightbox-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo" onclick="showMainPage(); return false;">Nebojša Dimovski</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#work" onclick="showMainPage(); scrollToSection('work'); return false;">Work</a></li>
+            <li><a href="#about" onclick="showMainPage(); scrollToSection('about'); return false;">About</a></li>
+            <li><a href="#contact" onclick="showMainPage(); scrollToSection('contact'); return false;">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="main-content">
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Nebojša Dimovski</h1>
+                <p class="subtitle">Painter</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Work / Series Overview -->
+        <section id="work">
+            <div class="section-header">
+                <h2>Selected Works</h2>
+                <div class="section-divider"></div>
+                <p>View by series</p>
+            </div>
+            <div class="series-grid">
+                <!-- Sevdisanje slikom -->
+                <div class="series-card" onclick="showGallery('sevdisanje')">
+                    <img src="images/1-amira-medunjanin.jpg" alt="Sevdisanje slikom" class="series-card-image">
+                    <div class="series-card-content">
+                        <h3>Sevdisanje slikom</h3>
+                        <p>An exhibition born from a deeply personal, emotional experience. Through his own inner crises, Nebojša Dimovski arrives at a fateful encounter with sevdalinka — not as a musical form, but as a space of solace, a cry of the soul, and quiet inner strength.</p>
+                        <div class="series-card-meta">
+                            <span>20 Works</span>
+                            <span>2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jazz & Urban Nights -->
+                <div class="series-card" onclick="showGallery('jazz-urban')">
+                    <img src="images/jazz1.jpg" alt="Jazz & Urban Nights" class="series-card-image">
+                    <div class="series-card-content">
+                        <h3>Jazz & Urban Nights</h3>
+                        <p>Monochromatic explorations of jazz culture and city life. These works capture the rhythm, solitude, and collective energy of nocturnal urban spaces.</p>
+                        <div class="series-card-meta">
+                            <span>19 Works</span>
+                            <span>2023–2024</span>
+                        </div>
+                    </div>
+                </div></div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="section-header">
+                <h2>About</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Artist Statement</h3>
+                    <p>My work is rooted in the human condition - memory, displacement, and emotional truth. I was born in Mostar and my early life was marked by the experience of war and constant movement, which shaped my sensitivity toward people, relationships, and fragility of existence.</p>
+                    <p>Painting became my way of processing memory and emotion, but also a way of preserving what is often lost in language: silence, intimacy, and inner states. I work primarily in figurative painting, using the human figure as a carrier of psychological and emotional depth rather than a literal portrait.</p>
+                    <p>In recent years, my practice has focused on themes of motherhood, collective trauma, and cultural memory, as well as deeply personal explorations of sevdah, understood not only as music, but as a state of longing, tenderness, and inner strength. Through this, I try to translate invisible emotional experiences into visual form.</p>
+                    <p>My paintings are not answers, but open spaces, inviting the viewer into reflection, recognition, and quiet dialogue with themselves.</p>
+
+                    <h3 style="margin-top: 3rem;">Biography</h3>
+                    <p>Nebojša Dimovski was born in Mostar in 1988. He finished art high school in Sarajevo, after which he went to Italy and entered the Accademia di Belle Arti di Roma, at La Sapienza University. He finishes painting in the class of professors Andrea Volo and Constantin Blandino. During his studies, one of his works was selected for the final of the prestigious Premio Nazionale delle Arti in Naples. After completing his studies, he went to the Netherlands, where he spent time in research work and in the studio of the American sculptor Barbara Greenberg. After Holland, he goes to Madrid, where he has notable exhibitions, such as the final of the 83rd Autumn Salon, Casa de Vacas, the Spring Salon, Valdepenas, a solo exhibition at the Association of Artists and Sculptors of Spain and many group exhibitions in Spain, Hungary, Italy, the Netherlands, Czech Republic, Serbia and the United States. He won the First Prize at the Valencia Kuna international competition.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/artist-portrait.jpg" alt="Nebojša Dimovski">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact-section" id="contact">
+            <h2>Get in Touch</h2>
+            <div class="section-divider"></div>
+            <p>For inquiries about available works, commissions, or exhibitions, please reach out.</p>
+            <div class="contact-links">
+                <a href="mailto:nebojsadimovski@gmail.com">Email</a>
+                <a href="https://instagram.com/neshadimovski" target="_blank">Instagram</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Nebojša Dimovski. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- GALLERY: Sevdisanje slikom -->
+    <div class="gallery-page" id="gallery-sevdisanje">
+        <button class="gallery-back" onclick="showMainPage()">← Back to Series</button>
+        <div class="section-header">
+            <h2>Sevdisanje slikom</h2>
+            <div class="section-divider"></div>
+            <p>An exhibition born from a deeply personal, emotional experience. Through his own inner crises, Nebojša Dimovski arrives at a fateful encounter with sevdalinka — not as a musical form, but as a space of solace, a cry of the soul, and quiet inner strength. In this encounter, the artist connects with all the subtle souls who, across generations, gave birth to sevdalinka as one of the most valuable and profound traditional symbols of the people in this region. The scenes that appear on the canvases are not illustrations, but emotional echoes — fragments of states, atmospheres, and memories evoked from verses and melodies. This is not an exhibition about music. This is an exhibition about the memories of the soul. This is an exhibition about sevdah and sevdisanje.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)">
+                <img src="images/1-amira-medunjanin.jpg" alt="Amira Medunjanin">
+                <div class="gallery-item-info">
+                    <h4>Amira Medunjanin</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1)">
+                <img src="images/2-bozo-vreco.jpg" alt="Božo Vrećo">
+                <div class="gallery-item-info">
+                    <h4>Božo Vrećo</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2)">
+                <img src="images/3-mostar-sevdah.jpg" alt="Mostar Sevdah">
+                <div class="gallery-item-info">
+                    <h4>Mostar Sevdah</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3)">
+                <img src="images/4-divanhanna.jpg" alt="Divanhana">
+                <div class="gallery-item-info">
+                    <h4>Divanhana</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 80 x 100 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4)">
+                <img src="images/5-damir-imamovic.jpg" alt="Damir Imamović">
+                <div class="gallery-item-info">
+                    <h4>Damir Imamović</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5)">
+                <img src="images/6-kad-ja-podjoh.jpg" alt="Kad ja podjoh na Bembasu">
+                <div class="gallery-item-info">
+                    <h4>Kad ja podjoh na Bembasu</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(6)">
+                <img src="images/7-kafu-mi-dragas.jpg" alt="Kafu mi draga ispeci">
+                <div class="gallery-item-info">
+                    <h4>Kafu mi draga ispeci</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(7)">
+                <img src="images/8-emina.jpg" alt="Emina">
+                <div class="gallery-item-info">
+                    <h4>Emina</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 160 x 120 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(8)">
+                <img src="images/9-sjetuje-me-majka.jpg" alt="Sjetuje me majka">
+                <div class="gallery-item-info">
+                    <h4>Sjetuje me majka</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(9)">
+                <img src="images/10-mujo-kuje-konja.jpg" alt="Mujo kuje konja po mjesecu">
+                <div class="gallery-item-info">
+                    <h4>Mujo kuje konja po mjesecu</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(10)">
+                <img src="images/11-nada-mamula.jpg" alt="Nada Mamula">
+                <div class="gallery-item-info">
+                    <h4>Nada Mamula</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(11)">
+                <img src="images/12-safet-isovic.jpg" alt="Safet Isović">
+                <div class="gallery-item-info">
+                    <h4>Safet Isović</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(12)">
+                <img src="images/13-zaim-imamovic.jpg" alt="Zaim Imamović">
+                <div class="gallery-item-info">
+                    <h4>Zaim Imamović</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(13)">
+                <img src="images/14-zehra-deovic.jpg" alt="Zehra Deović">
+                <div class="gallery-item-info">
+                    <h4>Zehra Deović</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(14)">
+                <img src="images/15-himzo-polovina.jpg" alt="Himzo Polovina">
+                <div class="gallery-item-info">
+                    <h4>Himzo Polovina</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(15)">
+                <img src="images/sevdah1.jpg" alt="Sevdisanje I">
+                <div class="gallery-item-info">
+                    <h4>Sevdisanje I</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(16)">
+                <img src="images/sevdah2.jpg" alt="Sevdisanje II">
+                <div class="gallery-item-info">
+                    <h4>Sevdisanje II</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(17)">
+                <img src="images/sevdah3.jpg" alt="Sevdisanje III">
+                <div class="gallery-item-info">
+                    <h4>Sevdisanje III</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(18)">
+                <img src="images/sevdah4.jpg" alt="Sevdisanje IV">
+                <div class="gallery-item-info">
+                    <h4>Sevdisanje IV</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(19)">
+                <img src="images/sevdah5.jpg" alt="Sevdisanje V">
+                <div class="gallery-item-info">
+                    <h4>Sevdisanje V</h4>
+                    <p class="meta">2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY: Jazz & Urban Nights -->
+    <div class="gallery-page" id="gallery-jazz-urban">
+        <button class="gallery-back" onclick="showMainPage()">← Back to Series</button>
+        <div class="section-header">
+            <h2>Jazz & Urban Nights</h2>
+            <div class="section-divider"></div>
+            <p>Monochromatic explorations of jazz culture and city life. These works capture the rhythm, solitude, and collective energy of nocturnal urban spaces — from intimate club performances to anonymous crowds on Parisian bridges.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightboxJazz(0)">
+                <img src="images/jazz1.jpg" alt="Jazz painting 1">
+                <div class="gallery-item-info">
+                    <p class="meta">2023 · Oil on canvas · 50 x 60 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(1)">
+                <img src="images/jazz2.jpg" alt="Jazz painting 2">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 50 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(2)">
+                <img src="images/jazz3.jpg" alt="Jazz painting 3">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 100 x 100 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(3)">
+                <img src="images/jazz4.jpg" alt="Jazz painting 4">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 120 x 90 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(4)">
+                <img src="images/jazz5.jpg" alt="Jazz painting 5">
+                <div class="gallery-item-info">
+                    <p class="meta">2023 · Oil on canvas · 130 x 90 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(5)">
+                <img src="images/jazz6.jpg" alt="Jazz painting 6">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 140 x 110 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(6)">
+                <img src="images/jazz7.jpg" alt="Jazz painting 7">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 140 x 110 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(7)">
+                <img src="images/jazz8.jpg" alt="Jazz painting 8">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 160 x 120 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(8)">
+                <img src="images/jazz9.jpg" alt="Jazz painting 9">
+                <div class="gallery-item-info">
+                    <p class="meta">2023 · Oil on canvas · 200 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(9)">
+                <img src="images/jazz10.jpg" alt="Jazz painting 10">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 200 x 90 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(10)">
+                <img src="images/jazz11.jpg" alt="Jazz painting 11">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 200 x 120 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(11)">
+                <img src="images/jazz12.jpg" alt="Jazz painting 12">
+                <div class="gallery-item-info">
+                    <p class="meta">2023 · Oil on canvas · 210 x 100 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(12)">
+                <img src="images/jazz13.jpg" alt="Jazz painting 13">
+                <div class="gallery-item-info">
+                    <p class="meta">2023 · Oil on canvas · 60 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(13)">
+                <img src="images/jazz14.jpg" alt="Jazz painting 14">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 100 x 70 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(14)">
+                <img src="images/jazz15.jpg" alt="Jazz painting 15">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 120 x 90 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(15)">
+                <img src="images/jazz16.jpg" alt="Jazz painting 16">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 120 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(16)">
+                <img src="images/jazz17.jpg" alt="Jazz painting 17">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 120 x 80 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(17)">
+                <img src="images/jazz18.jpg" alt="Jazz painting 18">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 120 x 90 cm</p>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightboxJazz(18)">
+                <img src="images/jazz19.jpg" alt="Jazz painting 19">
+                <div class="gallery-item-info">
+                    <p class="meta">2024 · Oil on canvas · 100 x 100 cm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">×</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxMeta"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== PAGE NAVIGATION =====
+        function showGallery(galleryId) {
+            document.getElementById('main-content').style.display = 'none';
+            document.querySelectorAll('.gallery-page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById('gallery-' + galleryId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function showMainPage() {
+            document.querySelectorAll('.gallery-page').forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById('main-content').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        
+        // ===== LIGHTBOX DATA =====
+        const sevdisanjeArtworks = [
+            { src: "images/1-amira-medunjanin.jpg", title: "Amira Medunjanin", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm" },
+            { src: "images/2-bozo-vreco.jpg", title: "Božo Vrećo", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm" },
+            { src: "images/3-mostar-sevdah.jpg", title: "Mostar Sevdah", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/4-divanhanna.jpg", title: "Divanhana", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 80 x 100 cm" },
+            { src: "images/5-damir-imamovic.jpg", title: "Damir Imamović", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm" },
+            { src: "images/6-kad-ja-podjoh.jpg", title: "Kad ja podjoh na Bembasu", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/7-kafu-mi-dragas.jpg", title: "Kafu mi draga ispeci", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/8-emina.jpg", title: "Emina", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 160 x 120 cm" },
+            { src: "images/9-sjetuje-me-majka.jpg", title: "Sjetuje me majka", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm" },
+            { src: "images/10-mujo-kuje-konja.jpg", title: "Mujo kuje konja po mjesecu", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 70 cm" },
+            { src: "images/11-nada-mamula.jpg", title: "Nada Mamula", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm" },
+            { src: "images/12-safet-isovic.jpg", title: "Safet Isović", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm" },
+            { src: "images/13-zaim-imamovic.jpg", title: "Zaim Imamović", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm" },
+            { src: "images/14-zehra-deovic.jpg", title: "Zehra Deović", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm" },
+            { src: "images/15-himzo-polovina.jpg", title: "Himzo Polovina", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 70 x 50 cm" },
+            { src: "images/sevdah1.jpg", title: "Sevdisanje I", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/sevdah2.jpg", title: "Sevdisanje II", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/sevdah3.jpg", title: "Sevdisanje III", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/sevdah4.jpg", title: "Sevdisanje IV", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" },
+            { src: "images/sevdah5.jpg", title: "Sevdisanje V", meta: "2025 · Mixed technique (acrylic and oil on canvas) · 100 x 80 cm" }
+        ];
+
+        const jazzArtworks = [
+            { src: "images/jazz1.jpg", title: "", meta: "2023 · Oil on canvas · 50 x 60 cm" },
+            { src: "images/jazz2.jpg", title: "", meta: "2024 · Oil on canvas · 50 x 70 cm" },
+            { src: "images/jazz3.jpg", title: "", meta: "2024 · Oil on canvas · 100 x 100 cm" },
+            { src: "images/jazz4.jpg", title: "", meta: "2024 · Oil on canvas · 120 x 90 cm" },
+            { src: "images/jazz5.jpg", title: "", meta: "2023 · Oil on canvas · 130 x 90 cm" },
+            { src: "images/jazz6.jpg", title: "", meta: "2024 · Oil on canvas · 140 x 110 cm" },
+            { src: "images/jazz7.jpg", title: "", meta: "2024 · Oil on canvas · 140 x 110 cm" },
+            { src: "images/jazz8.jpg", title: "", meta: "2024 · Oil on canvas · 160 x 120 cm" },
+            { src: "images/jazz9.jpg", title: "", meta: "2023 · Oil on canvas · 200 x 70 cm" },
+            { src: "images/jazz10.jpg", title: "", meta: "2024 · Oil on canvas · 200 x 90 cm" },
+            { src: "images/jazz11.jpg", title: "", meta: "2024 · Oil on canvas · 200 x 120 cm" },
+            { src: "images/jazz12.jpg", title: "", meta: "2023 · Oil on canvas · 210 x 100 cm" },
+            { src: "images/jazz13.jpg", title: "", meta: "2023 · Oil on canvas · 60 x 80 cm" },
+            { src: "images/jazz14.jpg", title: "", meta: "2024 · Oil on canvas · 100 x 70 cm" },
+            { src: "images/jazz15.jpg", title: "", meta: "2024 · Oil on canvas · 120 x 90 cm" },
+            { src: "images/jazz16.jpg", title: "", meta: "2024 · Oil on canvas · 120 x 80 cm" },
+            { src: "images/jazz17.jpg", title: "", meta: "2024 · Oil on canvas · 120 x 80 cm" },
+            { src: "images/jazz18.jpg", title: "", meta: "2024 · Oil on canvas · 120 x 90 cm" },
+            { src: "images/jazz19.jpg", title: "", meta: "2024 · Oil on canvas · 100 x 100 cm" }
+        ];
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        // ===== LIGHTBOX FUNCTIONS =====
+        function openLightbox(index) {
+            currentGallery = sevdisanjeArtworks;
+            currentIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openLightboxJazz(index) {
+            currentGallery = jazzArtworks;
+            currentIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightbox() {
+            const art = currentGallery[currentIndex];
+            document.getElementById('lightboxImg').src = art.src;
+            document.getElementById('lightboxImg').alt = art.title || 'Painting';
+            document.getElementById('lightboxTitle').textContent = art.title || '';
+            document.getElementById('lightboxMeta').textContent = art.meta;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function nextLightbox() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightbox();
+        }
+
+        function prevLightbox() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightbox();
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', nextLightbox);
+        document.getElementById('lightboxPrev').addEventListener('click', prevLightbox);
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextLightbox();
+            if (e.key === 'ArrowLeft') prevLightbox();
+        });
+
+        // ===== MOBILE MENU =====
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
